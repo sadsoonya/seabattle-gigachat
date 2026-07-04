@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#1A1A2E">
+
+    <!-- Верхняя панель -->
+    <LinearLayout
+        android:id="@+id/topPanel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:background="#16213E"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/tvStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Морской бой"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:textColor="#E94560"
+            android:layout_gravity="center"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="8dp">
+
+            <TextView
+                android:id="@+id/tvPlayerScore"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="👨 Игрок: 0"
+                android:textSize="16sp"
+                android:textColor="#FFFFFF"
+                android:gravity="center"
+                android:padding="8dp"
+                android:background="#0F3460"
+                android:layout_marginEnd="4dp"/>
+
+            <TextView
+                android:id="@+id/tvAIScore"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="🤖 AI: 0"
+                android:textSize="16sp"
+                android:textColor="#FFFFFF"
+                android:gravity="center"
+                android:padding="8dp"
+                android:background="#0F3460"
+                android:layout_marginStart="4dp"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Поле игрока -->
+    <TextView
+        android:id="@+id/labelPlayer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="⚓ Ваше поле"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:textColor="#E94560"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@id/topPanel"
+        app:layout_constraintLeft_toLeftOf="parent"/>
+
+    <androidx.gridlayout.widget.GridLayout
+        android:id="@+id/playerGrid"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="8dp"
+        android:background="#16213E"
+        app:layout_constraintTop_toBottomOf="@id/labelPlayer"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintHeight_percent="0.35"
+        app:layout_constraintDimensionRatio="H,1:1"/>
+
+    <!-- Поле AI -->
+    <TextView
+        android:id="@+id/labelAI"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="🎯 Поле AI"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:textColor="#E94560"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@id/playerGrid"
+        app:layout_constraintLeft_toLeftOf="parent"/>
+
+    <androidx.gridlayout.widget.GridLayout
+        android:id="@+id/aiGrid"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="8dp"
+        android:background="#16213E"
+        app:layout_constraintTop_toBottomOf="@id/labelAI"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/btnReset"
+        app:layout_constraintHeight_percent="0.35"
+        app:layout_constraintDimensionRatio="H,1:1"/>
+
+    <!-- Кнопка -->
+    <Button
+        android:id="@+id/btnReset"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="🔄 Новая игра"
+        android:textSize="16sp"
+        android:textColor="#FFFFFF"
+        android:padding="12dp"
+        android:backgroundTint="#E94560"
+        android:layout_margin="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
